@@ -9,6 +9,7 @@ class TPQueue {
         T value;
         Item* next;
     };
+    T data;
     Item* head, * tail;
     TPQueue::Item* create(const T&);
  public:
@@ -47,10 +48,10 @@ const T& TPQueue<T>::pop() {
         throw std::string("Empty!");
     } else {
         Item* temp = head->next;
-        T value = head->value;
+        data = head->value;
         delete head;
         head = temp;
-        return value;
+        return data;
     }
 }
 struct SYM {
